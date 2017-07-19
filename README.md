@@ -579,7 +579,7 @@ specific image.
 
 
 Now let’s create the same image we made with `commit` using a
-Dockerfile. On your machine, create a file with the name , with no file
+Dockerfile. On your machine, create a file with the name `Dockerfile`, with no file
 extension. Make sure it is in an empty directory. In the same directory,
 create the proof.txt with the text `I was here`. Now open the Dockerfile
 in your favorite editor (unless it is emacs ;) ), and write the
