@@ -52,10 +52,10 @@ make sure it isn’t running, because they can not run at the same time).
 
 To install Docker follow the steps at
 <https://store.docker.com/editions/community/docker-ce-desktop-windows>.
-After that, open the Docker settings and go to the tab. Make sure the
+After that, open the Docker settings and go to the `shared` tab. Make sure the
 correct drives are shared (Note: a prompt might appear to enter your
 Windows password). if you like, you can give the Docker machine more
-CPU’s and memory at the tab .
+CPU’s and memory at the tab `advanced`.
 
 
 
@@ -65,7 +65,7 @@ CPU’s and memory at the tab .
 
 To install Docker follow the steps at
 <https://store.docker.com/editions/community/docker-ce-desktop-mac>.
-After that open the Docker preferences and go to the tab. Make sure the
+After that open the Docker preferences and go to the `File Sharing` tab. Make sure the
 workshop directory can be reached.
 
 
@@ -149,7 +149,7 @@ with the `TAG` argument. Docker will then pull in the latest version
 which is specified under that specific tag. You can be even more
 specific by using the `@DIGEST` argument, which is a reference to a
 specific build of an image. If no tag or digest is provided, Docker will
-pull in the image version tagged as `latest`, for example .
+pull in the image version tagged as `latest`, for example `alpine:latest`.
 
 
 
@@ -188,7 +188,7 @@ particular Alpine image. If we want to pull this very specific image
 later on, we can use this digest as specification, because the `latest`
 tag could point to a different image in the future. It isn’t really
 recommended to use a digest, you should try to use specific tags such as
-.
+`alpine:3.5`.
 
 
 
@@ -597,8 +597,9 @@ In this case, we are building on top of the `latest` version of the
 `alpine` image (remember that Docker uses `latest` automatically if not
 specified). The second instruction, `LABEL`, is an optional instruction
 which can add metadata to your image. In this case we only added one
-key-value pair, but you can add as many as you like. The last
-instruction, `COPY`, simply copies the file (COPY src dest). You could
+key-value pair, but you can add as many as you like. 
+`Note: Docker also has the MAINTAINER instruction, but it is deprecated`
+The last instruction, `COPY`, simply copies the file (COPY src dest). You could
 also use `ADD` to copy the file, but add can do much more. If you `ADD`
 an archive, it automatically unpacks it, while `COPY` doesn’t. It also
 allows you to use a url as the source.
@@ -631,7 +632,7 @@ The first thing we see is ’Sending build context to Docker daemon
 3.072kB’. What Docker does is copying the entire directory of the
 Dockerfile to the Docker daemon. Which is only 3.072kB now, but if you
 have a huge directory it can take a long while. If you do have a huge
-directory, but don’t need everything for your build, you can create a
+directory, but don’t need everything for your build, you can create a `.dockerignore`
 file, which works similarly to a .gitignore file. Then you see three
 steps that are executed, with their output (if they have any). Each step
 has its own unique hash, which refers to a cached layer (a set of
@@ -729,7 +730,7 @@ passing it to your `docker run` command:
         docker run -it -p 4200:4200 <image-name> my extra args
         
 
-This will now run . Obviously this does nothing, but you can see that
+This will now run `npm start my extra args`. Obviously this does nothing, but you can see that
 the extra commands are passed. This does introduce a problem though,
 when you want to start an interactive shell.
 
