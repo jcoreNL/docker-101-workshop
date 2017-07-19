@@ -763,7 +763,7 @@ reduce its size, we can clear the npm cache after running npm install:
 
     FROM     node:alpine
     WORKDIR  /opt/app
-    COPY     angular-app/ .
+    COPY     app/ .
     RUN      npm install && \
              npm cache clean --force
     EXPOSE   4200
