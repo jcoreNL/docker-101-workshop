@@ -667,7 +667,7 @@ all your local images by running the `images` command.
 ### Creating an Angular Docker image
 
 Now we will do a bit more than just copy a file. We already created an
-app with the Angular CLI for you, using the command . Now we need to
+app with the Angular CLI for you, using the command `ng new app`. Now we need to
 create a Dockerfile that will first install all dependencies, then run
 the Angular application. Create the Dockerfile in the angular-app
 directory, with the following contents:
