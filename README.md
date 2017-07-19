@@ -850,7 +850,7 @@ the use of *volumes*.
 
 A volume can simply be a directory on your host system that you mount in
 a Docker container. This can be done by using the `-v` argument when
-starting a container. Create a new directory and name it . Additionally,
+starting a container. Create a new directory and name it `data_dir`. Additionally,
 create one or more files in this new folder, for example a text file.
 Then, navigate to the parent of this directory in the terminal and type
 in the following command:
