@@ -854,7 +854,7 @@ a Docker container. This can be done by using the `-v` argument when
 starting a container. Create a new directory and name it `data_dir`. Additionally,
 create one or more files in this new folder, for example a text file.
 Then, navigate to the parent of this directory in the terminal and type
-in the following command:
+in the following command (continue reading for the Windows versions of this command):
 
     docker run -it -v $(pwd)/data_dir:/opt/host_data alpine sh
         
@@ -865,11 +865,17 @@ Docker-specific but a terminal command used to retrieve the current
 directory we’re in, which has to be the one which has the data\_dir
 directory as its subfolder. This is needed because the `-v` option
 requires absolute paths. Please note that the `$(pwd)` command will not
-work in Windows. In Windows you need to use a full path with backslashes
+work in Windows. In Windows you need to use a path with backslashes
 (forward slashes if you use git-bash):
 
     docker run -it -v C:\Users\<user>\Documents\data_dir:/opt/host_data alpine sh
-        
+
+    IN POWERSHELL:
+    docker run -it -v ${PWD}\data_dir:/opt/host_data alpine sh
+
+    IN COMMAND PROMPT:
+    docker run -it -v %cd%\data_dir:/opt/host_data alpine sh
+    
 
 If you go to that folder in your container and type `ls` you should see
 a list of the files you created in the data\_dir folder earlier. The
