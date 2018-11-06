@@ -1022,10 +1022,8 @@ the `IPAddress` property.
 
 # Docker 102 Workshop
 
-We also have a Docker 102 Workshop, which will be on the 26th of July.
-It will show you how to use Docker multi stage builds, and Docker
-Compose. So the final exercise in this workshop, is to sign up for it.
-Go to <https://www.jcore.com/event/docker-102-workshop/>.
+We also have a Docker 102 Workshop, which can be found at <https://github.com/jcoreNL/docker-102-workshop>
+It will show you how to use Docker multi stage builds, and Docker Compose.
 
 # Further reading
 
