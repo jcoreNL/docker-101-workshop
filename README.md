@@ -188,7 +188,7 @@ particular Alpine image. If we want to pull this very specific image
 later on, we can use this digest as specification, because the `latest`
 tag could point to a different image in the future. It isn’t really
 recommended to use a digest, you should try to use specific tags such as
-`alpine:3.5`.
+`alpine:3.8`.
 
 
 
@@ -207,7 +207,7 @@ similar to this:
         
 
 As you can see, the Alpine image is really small. For comparison,
-ubuntu:latest is 119 MB. That’s why Alpine is used for a lot of Docker
+ubuntu:latest is 85 MB. That’s why Alpine is used for a lot of Docker
 images, and it is also the reason we use it in this workshop.
 
 ### Starting a container
@@ -365,7 +365,7 @@ Now, add an extra argument to the `ps` command:
     docker ps -a
         
 
-The `-a` or `-all` argument tells Docker to list all containers,
+The `-a` or `--all` argument tells Docker to list all containers,
 including the containers that are stopped. These containers can be
 restarted with the following command:
 
@@ -453,7 +453,7 @@ happen if you reuse the same name and tag for another image.
 
 
 
-If you use a Docker version $<$ 1.13 (1.13 was released on January 19,
+If you use a Docker version < 1.13 (1.13 was released on January 19,
 2017), you can’t use the prune commands. Instead, you can use this:
 
     COMMAND                                   EXPLANATION
